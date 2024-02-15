@@ -1,0 +1,23 @@
+{
+  "name": "saveether",
+  "version": "1.0.0",
+  "description": "Ether Saving Smart Contract",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TayoAdepetu/saveEther.git"
+  },
+  "author": "Tayo Adepetu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TayoAdepetu/saveEther/issues"
+  },
+  "homepage": "https://github.com/TayoAdepetu/saveEther#readme",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^4.0.0",
+    "hardhat": "^2.20.0"
+  }
+}
