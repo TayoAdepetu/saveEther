@@ -12,6 +12,7 @@ contract SaveEther {
         savings[msg.sender] = savings[msg.sender] + msg.value;
         emit SavingSuccessful(msg.sender, msg.value);
     }
+
     function withdraw() external {
         require(msg.sender != address(0), "wrong EOA");
         uint256 _userSavings = savings[msg.sender];
@@ -31,9 +32,10 @@ contract SaveEther {
         require(_amount > 0, "can't send zero value");
         require(savings[msg.sender] >= _amount);
         savings[msg.sender] -= _amount;
-        
+
         payable(_receiver).transfer(_amount);
     }
+
     function checkContractBal() external view returns (uint256) {
         return address(this).balance;
     }
