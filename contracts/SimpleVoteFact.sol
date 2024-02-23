@@ -3,15 +3,19 @@ pragma solidity ^0.8.0;
 
 import "./SimpleVoteSys.sol";
 
-contract VotingPollFactory {
-    address[] public polls;
+contract SimpleVoteSysFactory {
+    address[] public SimpleVoteSystems;
 
-    function createVotingPoll(string[] memory _optionNames) external {
-        address newPoll = address(new VotingPoll(_optionNames));
-        polls.push(newPoll);
+    function createSimpleVoteSys(string[] memory candidates) external {
+        address newSimpleVoteSys = address(new SimpleVoteSys(candidates));
+        SimpleVoteSystems.push(newSimpleVoteSys);
     }
 
-    function getPolls() external view returns (address[] memory) {
-        return polls;
+    function getAllSimpleVoteSystems()
+        external
+        view
+        returns (address[] memory)
+    {
+        return SimpleVoteSystems;
     }
 }
