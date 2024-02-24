@@ -12,7 +12,7 @@ contract GrantVault {
 
     mapping(address => Grant) public grants;
 
-    event GrantOffered(
+    event NewGrant(
         address indexed donor,
         address indexed beneficiary,
         uint256 amount,
@@ -20,7 +20,7 @@ contract GrantVault {
     );
     event GrantClaimed(address indexed beneficiary, uint256 amount);
 
-    function offerGrant(
+    function giveGrant(
         address _beneficiary,
         uint256 _unlockTime
     ) external payable {
@@ -44,10 +44,10 @@ contract GrantVault {
 
         grants[_beneficiary] = newGrant;
 
-        emit GrantOffered(msg.sender, _beneficiary, msg.value, _unlockTime);
+        emit NewGrant(msg.sender, _beneficiary, msg.value, _unlockTime);
     }
 
-    function claimGrant() external {
+    function getGrant() external {
         Grant storage grant = grants[msg.sender];
         require(
             grant.beneficiary == msg.sender,
