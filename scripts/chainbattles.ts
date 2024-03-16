@@ -2,7 +2,7 @@ import { ethers } from "hardhat";
 
 const main = async () => {
   try {
-    const nftContractFactory = await ethers.getContractFactory("ChainBattles");
+    const nftContractFactory = await ethers.getContractFactory("LoveBirds");
     const nftContract = await nftContractFactory.deploy();
     await nftContract.waitForDeployment();
 

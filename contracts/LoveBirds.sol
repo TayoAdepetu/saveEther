@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: MIT
 
-pragma solidity ^0.8.20;
+pragma solidity ^0.8.0;
 
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
 import "@openzeppelin/contracts/utils/Strings.sol";
@@ -21,9 +21,11 @@ contract LoveBirds is ERC721URIStorage {
             "<style>.base { fill: white; font-family: sans-serif; font-size: 18px; }</style>"
             '<rect width="100%" height="100%" fill="#339af0" />'
             '<text x="50%" y="40%" class="base" dominant-baseline="middle" text-anchor="middle">LoveBirds</text>'
-            '<text x="50%" y="50%" class="base" dominant-baseline="middle" text-anchor="middle">Symbol: LB-OlamiTobi</text>'
+            '<text x="50%" y="50%" class="base" dominant-baseline="middle" text-anchor="middle">Symbol: LB-OlamiTobi',
+            Strings.toString(_tokenId),
+            "</text>"
             "</svg>"
-        )
+        );
 
         return
             string(
